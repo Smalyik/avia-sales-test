@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createRootReducer from './store/rootReducer';
 
-const initialState = {};
+const initialState: object = {};
 
 const rootReducer = createRootReducer();
 

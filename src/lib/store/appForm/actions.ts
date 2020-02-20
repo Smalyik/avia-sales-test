@@ -13,7 +13,7 @@ export const onSuccessSend = () => ({
 	type: ActionTypes.ON_SUCCESS_SEND,
 });
 
-export const toggleModal = payload => ({
+export const toggleModal = (payload: object) => ({
 	type: ActionTypes.TOGGLE_MODAL,
 	payload,
 });

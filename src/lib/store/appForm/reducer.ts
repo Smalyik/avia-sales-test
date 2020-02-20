@@ -2,13 +2,18 @@
 /* eslint-disable no-useless-return */
 import { ActionTypes } from './actions';
 
+interface Action {
+	payload: object,
+	type: string
+}
+
 export const initialState = Object.freeze({
 	isFormAreaOpen: false,
 	isSentSuccesfully: null,
 	isModalOpen: false,
 });
 
-export default (state = initialState, action) => {
+export default (state = initialState, action: Action) => {
 	const { payload } = action;
 
 	switch (action.type) {

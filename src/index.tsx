@@ -1,14 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/global.styl'
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { getOrInitializeStore } from './lib/redux';
+import { routes } from './routes'
+import Layout from './components/Layout'
 
+const reduxStore = getOrInitializeStore(undefined);
+const store = getOrInitializeStore(reduxStore.getState());
+const props: any = {
+	flights: ['dfsef', 'fsefe']
+}
 const App = () => {
 	return (
-		<header className="header">
-			<img src={logo} alt=""/>
-		</header>
+		<Layout>
+			<Router>
+				<Switch>
+					{routes.map(route => {
+						return (
+							<Route
+								key={route.name}
+								path={route.path}
+								exact
+							>
+								<route.component
+									{...props}
+								/>
+							</Route>
+						);
+					})}
+				</Switch>
+			</Router>
+		</Layout>
 	);
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>
+	,
+	document.getElementById('root')
+);
