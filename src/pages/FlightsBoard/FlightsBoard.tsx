@@ -1,15 +1,15 @@
 import React from 'react';
 
-type Props = {
-    flights: Object[],
+interface FlightsBoardProps {
+    flights: string[],
 };
 
-const FlightsBoard: React.FC<Props> = props => {
+const FlightsBoard: React.FC<FlightsBoardProps> = props => {
     const { flights } = props;
     console.log(props);
     return (
         <div>
-            {flights.map((flight, index) => {
+            {flights?.map((flight: string, index: number) => {
                 return (
                     <div key={index}>
                         {flight}

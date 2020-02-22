@@ -1,9 +1,7 @@
 import FlightsBoard from './pages/FlightsBoard';
 
-type Props = any
-
 interface IRoute {
-    component: React.FC<Props>,
+    component: React.ElementType,
     name: string,
     path: string,
 }

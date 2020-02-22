@@ -8,9 +8,7 @@ import Layout from './components/Layout'
 
 const reduxStore = getOrInitializeStore(undefined);
 const store = getOrInitializeStore(reduxStore.getState());
-const props: any = {
-	flights: ['dfsef', 'fsefe']
-}
+
 const App = () => {
 	return (
 		<Layout>
@@ -23,9 +21,7 @@ const App = () => {
 								path={route.path}
 								exact
 							>
-								<route.component
-									{...props}
-								/>
+								<route.component/>
 							</Route>
 						);
 					})}

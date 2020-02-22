@@ -2,10 +2,7 @@ import React from 'react';
 import '../../styles/global.styl'
 import logo from '../../images/logo.svg';
 
-type Props = any;
-
-const Layout: React.FC<Props> = props => {
-    const { children } = props;
+const Layout: React.FC = ({children}) => {
 
     return (
         <>
