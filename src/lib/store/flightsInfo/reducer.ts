@@ -11,9 +11,9 @@ export default (state = initialState, action: AnyAction) => {
 	const { payload } = action;
 
 	switch (action.type) {
-		case ActionTypes.GET_FLIGHTS: {
-			//TODO zapros
-			return { ...state };
+		case ActionTypes.ADD_FLIGHTS: {
+			console.log('object')
+			return { ...state, ...payload };
 		}
 
 		default:
