@@ -4,9 +4,9 @@ import { createSelector } from 'reselect';
 
 interface IState {
     appForm: {
-        isFormAreaOpen: any,
-        isModalOpen: any,
-        isSentSuccesfully: any,
+        isFormAreaOpen: boolean,
+        isModalOpen: boolean,
+        isSentSuccesfully: boolean,
     },
 }
 

@@ -9,14 +9,6 @@ declare namespace NodeJS {
 	}
 }
 
-declare module "*.styl" {
-	interface IClassNames {
-		[className: string]: string;
-	}
-	const classNames: IClassNames;
-	export = classNames;
-}
-
 declare module "*.bmp" {
 	const src: string;
 	export default src;
@@ -59,6 +51,11 @@ declare module "*.svg" {
 }
 
 declare module "*.module.css" {
+	const classes: { readonly [key: string]: string };
+	export default classes;
+}
+
+declare module "*.module.styl" {
 	const classes: { readonly [key: string]: string };
 	export default classes;
 }

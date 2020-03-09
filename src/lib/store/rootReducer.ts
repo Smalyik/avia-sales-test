@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
-import { reducer as formReducer } from 'redux-form';
 import appForm from './appForm/reducer';
+import flightsInfo from './flightsInfo/reducer';
 
 const createRootReducer = () =>
 	combineReducers({
 		appForm,
-		form: formReducer,
+		flightsInfo,
 	});
 
 export default createRootReducer;

@@ -506,7 +506,6 @@ module.exports = function(webpackEnv) {
               test: stylusModuleRegex,
               use: getStyleLoaders(
                 {
-                  importLoaders: 3,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                   modules: {
                     getLocalIdent: getCSSModuleLocalIdent,
